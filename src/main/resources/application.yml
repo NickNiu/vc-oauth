@@ -1,0 +1,26 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: vc-oauth
+  datasource:
+    url: jdbc:mysql://localhost/oauth
+    username: root
+    password: root
+    schema: classpath:db/migration/v1__vc_oauth.sql
+  aop:
+    proxy-target-class: true
+  redis:
+    host: localhost
+    password:
+
+management:
+  security:
+    enabled: false
+  context-path: /admin
+
+logging:
+  level:
+    org.springframework.security: debug
+    org.springframework.web: debug
